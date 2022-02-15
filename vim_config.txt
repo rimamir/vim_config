@@ -32,7 +32,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-colorscheme-switcher'
 
-
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -74,7 +73,6 @@ autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,
 
 syntax on "Включить подсветку синтаксиса
 
-" set nu "Включаем нумерацию строк
 set mousehide "Спрятать курсор мыши когда набираем текст
 set mouse=a "Включить поддержку мыши
 set termencoding=utf-8 "Кодировка терминала
@@ -89,6 +87,9 @@ set showtabline=1
 set wrap
 set linebreak
 
+" Линия на 119 символах
+set cc=119
+
 " Вырубаем .swp и ~ (резервные) файлы
 set nobackup
 set noswapfile
@@ -99,32 +100,12 @@ set clipboard=unnamed
 set ruler
 
 set hidden
-nnoremap <C-N> :bnext<CR>
-nnoremap <C-P> :bprev<CR>
+
+inoremap jk <esc>
+
 
 " Выключаем звук в Vim
 set visualbell t_vb=
-
-"Переключение табов по CMD+number для MacVim
-if has("gui_macvim")
-  " Press Ctrl-Tab to switch between open tabs (like browser tabs) to 
-  " the right side. Ctrl-Shift-Tab goes the other way.
-  noremap <C-Tab> :tabnext<CR>
-  noremap <C-S-Tab> :tabprev<CR>
-
-  " Switch to specific tab numbers with Command-number
-  noremap <D-1> :tabn 1<CR>
-  noremap <D-2> :tabn 2<CR>
-  noremap <D-3> :tabn 3<CR>
-  noremap <D-4> :tabn 4<CR>
-  noremap <D-5> :tabn 5<CR>
-  noremap <D-6> :tabn 6<CR>
-  noremap <D-7> :tabn 7<CR>
-  noremap <D-8> :tabn 8<CR>
-  noremap <D-9> :tabn 9<CR>
-  " Command-0 goes to the last tab
-  noremap <D-0> :tablast<CR>
-endif
-
 set guifont=Monaco:h18
-colorscheme OceanicNext
+"  colorscheme OceanicNext
+colorscheme gruvbox"
